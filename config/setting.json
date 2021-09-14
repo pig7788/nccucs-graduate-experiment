@@ -1,0 +1,153 @@
+{
+    "scheme_config_path": "/home/albeli/workspace/NCCU/Experiment/config/scheme.json",
+    "entity_config_path": "/home/albeli/workspace/NCCU/Experiment/config/entity.json",
+    "intent_config_path": "/home/albeli/workspace/NCCU/Experiment/config/intent.json",
+    "dataset_path": {
+        "all_dataset_path": "/home/albeli/workspace/NCCU/Experiment/datasets/{}/all_data.txt",
+        "all_dataset_intent_count_path": "/home/albeli/workspace/NCCU/Experiment/datasets/{}/all_data_intent_count.txt",
+        "all_dataset_backup_path": "/home/albeli/workspace/NCCU/Experiment/datasets/{}/all_data_backup.txt",
+        "all_dataset_backup_intent_count_path": "/home/albeli/workspace/NCCU/Experiment/datasets/{}/all_data_backup_intent_count.txt",
+        "train_dataset_path": "/home/albeli/workspace/NCCU/Experiment/datasets/{}/train_data.txt",
+        "train_dataset_intent_count_path": "/home/albeli/workspace/NCCU/Experiment/datasets/{}/train_data_intent_count.txt",
+        "train_dataset_backup_path": "/home/albeli/workspace/NCCU/Experiment/datasets/{}/train_data_backup.txt",
+        "train_dataset_backup_intent_count_path": "/home/albeli/workspace/NCCU/Experiment/datasets/{}/train_data_backup_intent_count.txt",
+        "valid_dataset_path": "/home/albeli/workspace/NCCU/Experiment/datasets/{}/valid_data.txt",
+        "valid_dataset_intent_count_path": "/home/albeli/workspace/NCCU/Experiment/datasets/{}/valid_data_intent_count.txt",
+        "valid_dataset_backup_path": "/home/albeli/workspace/NCCU/Experiment/datasets/{}/valid_data_backup.txt",
+        "valid_dataset_backup_intent_count_path": "/home/albeli/workspace/NCCU/Experiment/datasets/{}/valid_data_backup_intent_count.txt",
+        "test_dataset_path": "/home/albeli/workspace/NCCU/Experiment/datasets/{}/test_data.txt",
+        "test_dataset_intent_count_path": "/home/albeli/workspace/NCCU/Experiment/datasets/{}/test_data_intent_count.txt",
+        "test_dataset_backup_path": "/home/albeli/workspace/NCCU/Experiment/datasets/{}/test_data_backup.txt",
+        "test_dataset_backup_intent_count_path": "/home/albeli/workspace/NCCU/Experiment/datasets/{}/test_data_backup_intent_count.txt",
+        "extended_dataset_path": "/home/albeli/workspace/NCCU/Experiment/datasets/{}/extended_t5_format_{}_{}_{}_{}_{}_{}_data.txt",
+        "t5_format_dataset_path": "/home/albeli/workspace/NCCU/Experiment/datasets/{}/t5_format_{}_{}_{}_data.txt"
+    },
+    "dataset_reduction": {
+        "multiwoz": {
+            "train": 2000
+        },
+        "sgd": {
+            "train": 400,
+            "test": 250
+        }
+    },
+    "t5_based": {
+        "train_hyperparameters": {
+            "snips": {
+                "epoch": 25,
+                "learning_rate": 5e-5
+            },
+            "atis": {
+                "epoch": 30,
+                "learning_rate": 5e-5
+            },
+            "multiwoz": {
+                "epoch": 25,
+                "learning_rate": 5e-5
+            },
+            "sgd": {
+                "epoch": 25,
+                "learning_rate": 5e-5
+            }
+        },
+        "inference_hyperparameters": {
+            "snips_to_snips": {
+                "bert_cosine_similarity_weight": 0.3,
+                "t5_stsb_similarity_weight": 0.3,
+                "intent_string_similarity_weight": 0.4
+            },
+            "snips_to_atis": {
+                "bert_cosine_similarity_weight": 1.0,
+                "t5_stsb_similarity_weight": 0.0,
+                "intent_string_similarity_weight": 0.0
+            },
+            "snips_to_multiwoz": {
+                "bert_cosine_similarity_weight": 0.0,
+                "t5_stsb_similarity_weight": 0.7,
+                "intent_string_similarity_weight": 0.3
+            },
+            "snips_to_sgd": {
+                "bert_cosine_similarity_weight": 0.3,
+                "t5_stsb_similarity_weight": 0.4,
+                "intent_string_similarity_weight": 0.3
+            },
+            "atis_to_snips": {
+                "bert_cosine_similarity_weight": 0.0,
+                "t5_stsb_similarity_weight": 0.5,
+                "intent_string_similarity_weight": 0.5
+            },
+            "atis_to_atis": {
+                "bert_cosine_similarity_weight": 0.3,
+                "t5_stsb_similarity_weight": 0.3,
+                "intent_string_similarity_weight": 0.4
+            },
+            "atis_to_multiwoz": {
+                "bert_cosine_similarity_weight": 0.1,
+                "t5_stsb_similarity_weight": 0.2,
+                "intent_string_similarity_weight": 0.7
+            },
+            "atis_to_sgd": {
+                "bert_cosine_similarity_weight": 0.1,
+                "t5_stsb_similarity_weight": 0.3,
+                "intent_string_similarity_weight": 0.6
+            },
+            "multiwoz_to_snips": {
+                "bert_cosine_similarity_weight": 0.5,
+                "t5_stsb_similarity_weight": 0.5,
+                "intent_string_similarity_weight": 0.0
+            },
+            "multiwoz_to_atis": {
+                "bert_cosine_similarity_weight": 0.8,
+                "t5_stsb_similarity_weight": 0.0,
+                "intent_string_similarity_weight": 0.2
+            },
+            "multiwoz_to_multiwoz": {
+                "bert_cosine_similarity_weight": 0.4,
+                "t5_stsb_similarity_weight": 0.5,
+                "intent_string_similarity_weight": 0.1
+            },
+            "multiwoz_to_sgd": {
+                "bert_cosine_similarity_weight": 0.0,
+                "t5_stsb_similarity_weight": 0.8,
+                "intent_string_similarity_weight": 0.2
+            },
+            "sgd_to_snips": {
+                "bert_cosine_similarity_weight": 0.0,
+                "t5_stsb_similarity_weight": 0.6,
+                "intent_string_similarity_weight": 0.4
+            },
+            "sgd_to_atis": {
+                "bert_cosine_similarity_weight": 0.7,
+                "t5_stsb_similarity_weight": 0.0,
+                "intent_string_similarity_weight": 0.3
+            },
+            "sgd_to_multiwoz": {
+                "bert_cosine_similarity_weight": 0.0,
+                "t5_stsb_similarity_weight": 0.2,
+                "intent_string_similarity_weight": 0.8
+            },
+            "sgd_to_sgd": {
+                "bert_cosine_similarity_weight": 0.0,
+                "t5_stsb_similarity_weight": 0.0,
+                "intent_string_similarity_weight": 1.0
+            }
+        },
+        "train_batch_size": 16,
+        "predict_batch_size": 560,
+        "max_seq_length": 128,
+        "max_label_seq_length": 48,
+        "model_path": "/home/albeli/workspace/NCCU/Experiment/models/t5_based/"
+    },
+    "bert_based": {
+        "train_batch_size": 32,
+        "learning_rate": 5e-5,
+        "max_seq_length": 180,
+        "model_path": "/home/albeli/workspace/NCCU/Experiment/models/bert_based/"
+    },
+    "bert_crf": {
+        "train_batch_size": 32,
+        "learning_rate": 5e-5,
+        "max_seq_length": 180,
+        "model_path": "/home/albeli/workspace/NCCU/Experiment/models/bert_crf/"
+    }
+}

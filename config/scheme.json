@@ -1,0 +1,30 @@
+{
+    "BIO": {
+        "simple2completed": {
+            "B": "beginning",
+            "I": "inside",
+            "O": "outside"
+        },
+        "completed2simple": {
+            "beginning": "B",
+            "inside": "I",
+            "outside": "O"
+        }
+    },
+    "BIOSE": {
+        "simple2completed": {
+            "B": "beginning",
+            "I": "inside",
+            "O": "outside",
+            "S": "single",
+            "E": "end"
+        },
+        "completed2simple": {
+            "beginning": "B",
+            "inside": "I",
+            "outside": "O",
+            "single": "S",
+            "end": "E"
+        }
+    }
+}
